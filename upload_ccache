@@ -8,13 +8,13 @@ com ()
     tar --use-compress-program="pigz -k -$2 " -cf $1.tar.gz ccache
 }
 
-time com ccache-nez 1 # Compression level 1, its enough
+time com ccache-ssos 1 # Compression level 1, its enough
 
 up(){
 	curl --upload-file $1 https://transfer.sh/
 }
 
-up ccache-nez.tar.gz
+up ccache-ssos.tar.gz
 #mkdir -p ~/.config/rclone
 #echo "$rclone_config" > ~/.config/rclone/rclone.conf # Write rclone config found from env variable, so that cloud storage can be used to upload ccache
 #time rclone copy ccache.tar.gz apon:ccache/ci2 -P # apon is my rclone config name (first line without [] of ~/.config/rclone/rclone.conf file from rclone setupped pc), ccache/ci2 is where ccache will be saved in my cloud, use yours one

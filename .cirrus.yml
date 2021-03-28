@@ -1,9 +1,8 @@
 env: # Environt variable to pass to all tasks
     CIRRUS_CLONE_DEPTH: 1 # No need to clone with whole history
     CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone repo
-    auth: "ENCRYPTED[4a3d58a4de0ff1aa8541af68cfc2bd11e7833ec8385bc1009864cf51803557f38329aeef6859ae19ab39aecf28aedb2e]"
 task:
-    name: Build Nezuko
+    name: Build SSOS
     timeout_in: 120m
     container:
       image: apon77/aosp:latest
