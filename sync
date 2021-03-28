@@ -14,6 +14,9 @@ git config --global user.email achubadyal4@gmail.com
 # Sync source with -q, no need unnecessary messages, you can remove -q if want! try with -j30 first, if fails, it will try again with -j8
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
 
+# Bye live display
+cd device/ssos/sepolicy && git fetch https://github.com/ShapeShiftOS/android_device_ssos_sepolicy && git cherry-pick ec381d673ee0369c91a52aad553020eedeab0010 --no-edit
+
 git clone https://github.com/AtomicXZ/device_xiaomi_phoenix -b ssos device/xiaomi/phoenix
 git clone https://github.com/AtomicXZ/kernel_xiaomi_phoenix --depth=1 -b Q kernel/xiaomi/phoenix
 git clone https://github.com/AtomicXZ/vendor_xiaomi vendor/xiaomi
